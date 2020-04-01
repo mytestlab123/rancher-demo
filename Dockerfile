@@ -11,7 +11,8 @@ COPY app/static /static
 COPY --from=app /go/src/app/docker-demo /bin/docker-demo
 COPY app/templates /templates
 ENV TITLE myriodemo
-ENV SHOW_VERSION v0.0.3
+ENV SHOW_VERSION v2
 ENV COW_COLOR blue
+ENV METADATA amit
 EXPOSE 8080
 ENTRYPOINT ["/bin/docker-demo"]
