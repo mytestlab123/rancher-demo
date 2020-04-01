@@ -10,8 +10,8 @@ RUN apk add -U --no-cache curl
 COPY app/static /static
 COPY --from=app /go/src/app/docker-demo /bin/docker-demo
 COPY app/templates /templates
-#ENV TITLE myriodemo
-#ENV SHOW_VERSION v0.0.2
-ENV COW_COLOR black
+ENV TITLE myriodemo
+ENV SHOW_VERSION v0.0.3
+ENV COW_COLOR blue
 EXPOSE 8080
 ENTRYPOINT ["/bin/docker-demo"]
