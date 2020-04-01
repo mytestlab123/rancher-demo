@@ -41,3 +41,11 @@ rm:
 	rio rm $$proj@v0 | true
 	sleep 5;
 
+check:
+	export url=$$(rio ps -w | grep -i $$proj | awk '{print $$3}'); \
+	echo ""; curl -s $$url/demo | jq; \
+
+monitor:
+	export url=$$(rio ps -w | grep -i $$proj | awk '{print $$3}'); \
+	watch -n 10 "rio ps; echo "";tkn tr list; echo""; curl -s $$url/info; echo ""; echo ""; curl -s $$url/demo | jq"
+	
